@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use DB;
 use Request;
 use App\Property;
+use App\Contract;
 use App\Http\Requests;
 use App\Http\Requests\PropertyRequest;
 use App\Http\Controllers\Controller;
@@ -41,5 +42,12 @@ class PropertiesController extends Controller{
     $property->update($request->all());
 
     return redirect('properties');
+  }
+  public function destroy($id){
+    $property = Property::findOrFail($id);
+    $contract = Contract::where('property_id', '=', $id)->delete();
+    $property->delete();
+    return redirect('properties');
+
   }
 }

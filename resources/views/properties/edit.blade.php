@@ -8,6 +8,8 @@
   @include('properties._form', ['submitButtonText' => 'Submit Changes'])
 
   {!! Form::close() !!}
-
+  {!! Form::open(['route' => ['properties.destroy', $property->id], 'method' => 'delete']) !!}
+  <button type="submit" class= 'btn btn-primary form-control'>Delete</button>
+  {!! Form::close() !!}
   @include('errors.list')
 @endsection

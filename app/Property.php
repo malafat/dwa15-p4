@@ -18,8 +18,6 @@ class Property extends Model
   public function contracts(){
     return $this->hasMany('App\Contract');
   }
-  public function renters(){
-    return $this->hasManyThrough('App\Renter', 'App\Contract', 'renter_id');
-  }
+
 
 }

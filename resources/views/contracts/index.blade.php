@@ -15,4 +15,5 @@
       @endforeach
     </tbody>
   </table>
+  <a href="/contracts/create"> Create new Lease </a>
 @endsection

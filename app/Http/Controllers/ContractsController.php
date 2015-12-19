@@ -5,6 +5,7 @@ use Request;
 use Carbon\Carbon;
 use App\Contract;
 use App\Property;
+use App\Renter;
 use App\Http\Requests;
 use App\Http\Requests\ContractRequest;
 use App\Http\Controllers\Controller;
@@ -34,10 +35,14 @@ class ContractsController extends Controller{
   }
 
   public function create(){
-    return view('contracts.create');
+    $rented = Contract::select('property_id')->get();
+    $renters = Renter::select('id', 'first_name', 'last_name')->get()->toArray();
+    $properties = Property::select('id', 'address')->whereNotIn('id', $rented)->get()->toArray();
+    return view('contracts.create', compact('rented', 'renters', 'properties'));
   }
 
   public function store(ContractRequest $request){
+    //dd($request);
     $input = $request->all();
     Contract::create($input);
     return redirect('contracts');
@@ -54,5 +59,10 @@ class ContractsController extends Controller{
     $contract->update($request->all());
 
     return redirect('contracts');
+  }
+  public function destroy($id){
+    $contract = Contract::where($id, '=', 'id')->delete();
+    return redirect('contracts');
+
   }
 }

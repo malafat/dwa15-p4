@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use DB;
 use Request;
 use App\Renter;
+use App\Contract;
 use App\Http\Requests;
 use App\Http\Requests\RenterRequest;
 use App\Http\Controllers\Controller;
@@ -39,6 +40,12 @@ class RentersController extends Controller{
   public function update($id, RenterRequest $request){
     $renter = Renter::findOrFail($id);
     $renter->update($request->all());
+    return redirect('renters');
+  }
+  public function destroy($id){
+    $renter = Renter::findOrFail($id);
+    $contract = Contract::where('renter_id', '=', $id)->delete();
+    $renter->delete();
     return redirect('renters');
   }
 }

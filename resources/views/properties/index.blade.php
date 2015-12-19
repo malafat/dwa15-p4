@@ -15,4 +15,5 @@
       @endforeach
     </tbody>
   </table>
+  <a href="/properties/create"> Add New Property </a>
 @endsection

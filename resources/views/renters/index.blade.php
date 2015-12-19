@@ -17,4 +17,5 @@
       @endforeach
     </tbody>
   </table>
+  <a href="/renters/create"> Add New Renter </a>
 @endsection
