@@ -18,11 +18,11 @@
 @endif
 <div class="form-group">
   {!! Form::label('term_start', 'Term Start')!!}
-  {!! Form::text('term_start', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control']) !!}
+  {!! Form::text('term_start', $contract['term_start'], ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
   {!! Form::label('term_end', 'Term End')!!}
-  {!! Form::text('term_end', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control']) !!}
+  {!! Form::text('term_end', $contract['term_end'], ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
   {!! Form::label('rent', 'Rent')!!}
