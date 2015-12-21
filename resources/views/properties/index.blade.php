@@ -1,6 +1,7 @@
 
 @extends('layouts.master')
 @section('content')
+  <h2> Properties </h2>
   <table class="table sortable">
     <thead>
       <tr>

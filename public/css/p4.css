@@ -1,8 +1,9 @@
 #navlist
 {
+text-align: center;
 padding: 0 1px 1px;
 margin-left: 0;
-font: bold 12px Verdana, sans-serif;
+font: bold 16px Verdana, sans-serif;
 }
 
 #navlist li
@@ -16,8 +17,8 @@ display: inline;
 #navlist li a
 {
 padding: 0.25em 0.5em 0.25em 0.75em;
-border-left: 1em solid #AAB;
-background: #CCD;
+border-left: 1em solid #BBB;
+background: #CCC;
 text-decoration: none;
 }
 
@@ -31,3 +32,10 @@ color: #FFF;
 background: #332;
 }
 table, td, th { border : 1px solid black; }
+h2{
+  text-align: center;
+}
+footer{
+  font: bold 16px Verdana, sans-serif;
+  text-align: center;
+}

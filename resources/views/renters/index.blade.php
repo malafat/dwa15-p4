@@ -3,6 +3,7 @@
 
 
 @section('content')
+  <h2> Renters </h2>
   <table class="table sortable">
     <thead>
       <tr>

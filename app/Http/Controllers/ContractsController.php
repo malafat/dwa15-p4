@@ -26,8 +26,13 @@ class ContractsController extends Controller{
     return view('contracts.index', compact('contracts', 'columns'));
     //return view('contracts.index', compact('contracts', 'columns', 'properties'));
   }
-  public function all(){
-    return('all');
+  public function getAll(){
+    $columns = array('address' => 'Property Address', 'last_name' => 'Last Name', 'first_name' => 'First Name', 'renter_id' => 'Renter ID', 'term_start' => 'Start Date', 'term_end' => 'End Date', 'rent' => 'Rent');
+    $contracts = Contract::join('renters','contracts.renter_id', '=', 'renters.id')
+                        ->join('properties','contracts.property_id', '=', 'properties.id')
+                        ->select('properties.address', 'renters.first_name', 'renters.last_name', 'contracts.*')
+                        ->get();
+    return view('contracts.index', compact('contracts', 'columns'));
   }
   public function show($id){
     $contract = Contract::find($id);

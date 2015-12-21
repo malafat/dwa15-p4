@@ -44,5 +44,16 @@ class PropertiesTableSeeder extends Seeder
         'baths' => '1',
         'notes' => 'blasgal'
       ]);
+      DB::table('properties')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'address' => '2030 Supreme Street',
+        'city' => 'Metropolis',
+        'state' => 'North Territory',
+        'area' => '1000',
+        'beds' => '1',
+        'baths' => '1',
+        'notes' => ''
+      ]);
     }
 }

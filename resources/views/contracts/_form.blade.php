@@ -1,4 +1,4 @@
-
+@if(isset($properties))
 <div class="form-group">
   {!! Form::label('property_id', 'Property')!!}
   <select name='property_id'>
@@ -15,6 +15,7 @@
     @endforeach
   </select>
 </div>
+@endif
 <div class="form-group">
   {!! Form::label('term_start', 'Term Start')!!}
   {!! Form::text('term_start', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control']) !!}

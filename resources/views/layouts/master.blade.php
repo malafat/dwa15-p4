@@ -3,7 +3,7 @@
 <head>
     <title>
         {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
-        @yield('title','Best Friend')
+        @yield('title','Rentals')
     </title>
 
     <meta charset='utf-8'>
@@ -35,6 +35,8 @@
       {{-- Main page content will be yielded here --}}
       @yield('content')
       <footer>
+        <a href='/logout'>Logout</a>
+        <br>
         <a href='/'>Home</a>
         &copy; {{ date('Y') }}
       </footer>

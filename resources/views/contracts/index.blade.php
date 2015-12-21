@@ -1,6 +1,7 @@
 
 @extends('layouts.master')
 @section('content')
+  <h2> Leases </h2>
   <table class="table sortable">
     <thead>
       <tr>
@@ -15,5 +16,8 @@
       @endforeach
     </tbody>
   </table>
+  <a href="/contracts/all"> See all leases </a>
+  <br>
   <a href="/contracts/create"> Create new Lease </a>
+
 @endsection

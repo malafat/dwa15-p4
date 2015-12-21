@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 //Model routes
 Route::resource('properties', 'PropertiesController');
+Route::get('contracts/all', 'ContractsController@getAll');
 Route::resource('contracts', 'ContractsController');
 Route::resource('renters', 'RentersController');
 //auth routes

@@ -29,5 +29,14 @@ class RentersTableSeeder extends Seeder
         'email' => 'jamjam@kiki.go',
         'notes' => 'blasgal'
       ]);
+      DB::table('renters')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'first_name' => 'Paul',
+        'last_name' => 'Erdos',
+        'phone_number' => '4325552345',
+        'email' => 'paul@SF.com',
+        'notes' => 'weird guy'
+      ]);
     }
 }
